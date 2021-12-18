@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
+import Button from './Button'
 
-const Header = (props) => {
-    const {title} = props
+const Header = ({title, addBtnHandler, addButton}) => {
     return (
         <header>
-            <h1>Task Tracker</h1>
-            <h3>Title: {title}</h3>
+            <h1>{title}</h1>
+            { <Button btnColor={`${ addButton ? 'green' : 'red' }`} btnText={`${ addButton ? 'Add' : 'Close'}`} addBtnHandler={addBtnHandler} /> }
         </header>
     )
 }
